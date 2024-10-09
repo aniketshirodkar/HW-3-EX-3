@@ -111,6 +111,7 @@ SELECT *
                          FROM salesman
                          WHERE name = 'Paul Adam');
 
+-- This query retrieves all orders from the orders table that were issued by the salesman named 'Paul Adam'. It achieves this by first finding the salesman_id of 'Paul Adam' from the salesman table and then using this ID to filter orders in the orders
 
 /* 2. Explain in plain English in one sentence what is the output of the folloiwng block of SQL commands: *.'
 
@@ -119,6 +120,8 @@ SELECT *
   WHERE salesman_id = (SELECT salesman_id
                          FROM salesman
                          WHERE city = 'London');
+
+-- This query selects all orders from the orders table where the orders were placed by salespeople based in London. It does this by identifying salespeople located in London through their salesman_id in the salesman table and then using these IDs to filter relevant orders
 
 
 
@@ -132,4 +135,6 @@ SELECT ord_date,
   HAVING SUM(purch_amt) > (SELECT MAX(purch_amt) + 1000
                              FROM orders b
                              WHERE a.ord_date = b.ord_date);
+
+-- This query calculates and returns the order dates and total purchase amounts from the orders table, but only for those dates where the total purchase amount exceeds by at least $1000$ more than the maximum single order amount on that same date. It groups the results by order date and uses a subquery to determine if the condition is met for each date
 

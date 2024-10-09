@@ -103,7 +103,9 @@ EMP_IDNO EMP_FNAME       EMP_LNAME         EMP_DEPT
    839139 Maria           Foster                  57
 
 
-/* 1. Explain in plain English in one sentence what is the output of the folloiwng block of SQL commands:  */
+/* 1. Explain in plain English in one sentence what is the output of the folloiwng block of SQL commands:  
+   This retrieves the names of salesmen, customer names, and their cities for all pairs where the salesman and customer are located in the same city.
+*/
 
 SELECT s.name,
        c.cust_name,
@@ -114,7 +116,9 @@ SELECT s.name,
 
 
 
-/* 2. Explain in plain English in one sentence what is the output of the folloiwng block of SQL commands: */
+/* 2. Explain in plain English in one sentence what is the output of the folloiwng block of SQL commands: 
+    This returns the names of customers, their cities, the names of salesmen, and their commission rates for cases where the customer is assigned to a salesman with a commission greater than 12%.
+*/
 
 SELECT c.cust_name AS "Customer Name",
        c.city,
